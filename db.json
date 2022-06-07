@@ -1,0 +1,28 @@
+[
+    {
+        "question" :"first question?",
+        "answers":[
+            {
+                "correct":false,
+                "answer": "Yes"
+            },
+            {
+                "correct":true,
+                "answer": "No"
+            }
+        ]
+    },
+    {
+        "question" :"second question?",
+        "answers":[
+            {
+                "correct":true,
+                "answer": "Yes"
+            },
+            {
+                "correct":false,
+                "answer": "No"
+            }
+        ]
+    }
+]
