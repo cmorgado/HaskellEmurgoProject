@@ -1,54 +1,74 @@
 {
     "questions": [
     {
-        "question" :"first question?",
+        "question" :"Which of the following data type is unbounded?",
         "response":0,
         "answers":[
             {
                 "correct":false,
-                "answer": "Yes"
+                "answer": "Integer"
             },
             {
                 "correct":true,
-                "answer": "No"
+                "answer": "Int"
             }
             ,
             {
                 "correct":false,
-                "answer": "NOne"
+                "answer": "Char"
+            }
+            ,
+            {
+                "correct":false,
+                "answer": "Bool"
+            }
+            ,
+            {
+                "correct":false,
+                "answer": "Float"
+            }
+            ,
+            {
+                "correct":false,
+                "answer": "Double"
             }
         ]
     },
     {
-        "question" :"second question?",
+        "question" :"Which of these statements is true?",
         "response":0,
         "answers":[
             {
                 "correct":true,
-                "answer": "Yes"
+                "answer": "Every function takes only one argument in Haskell"
             },
             {
                 "correct":false,
-                "answer": "No"
+                "answer": "Every function takes more than one argument in Haskell."
             }
         ]
     }
         ,
     {
-        "question" :"third question?",
+        "question" :"Which of these is a value of type `Bool`?",
         "response":0,
         "answers":[
             {
                 "correct":true,
-                "answer": "Yes"
+                "answer": "False"
             },
             {
                 "correct":false,
-                "answer": "No"
+                "answer": "Char"
             },
              {
                 "correct":false,
-                "answer": "maybe"
+                "answer": "Int"
+            }
+            ,
+             {
+                "correct":false,
+                "answer": "Bool"
             }
         ]
     }
