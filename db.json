@@ -12,6 +12,11 @@
                 "correct":true,
                 "answer": "No"
             }
+            ,
+            {
+                "correct":false,
+                "answer": "NOne"
+            }
         ]
     },
     {
@@ -25,6 +30,25 @@
             {
                 "correct":false,
                 "answer": "No"
+            }
+        ]
+    }
+        ,
+    {
+        "question" :"third question?",
+        "response":0,
+        "answers":[
+            {
+                "correct":true,
+                "answer": "Yes"
+            },
+            {
+                "correct":false,
+                "answer": "No"
+            },
+             {
+                "correct":false,
+                "answer": "maybe"
             }
         ]
     }
