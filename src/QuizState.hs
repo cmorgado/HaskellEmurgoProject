@@ -1,5 +1,5 @@
 module QuizState(
-    answerSession
+    answerSession, writeToScreenState
 ) where
 
 import System.Random
@@ -11,3 +11,7 @@ answerSession answer = do
     modify (++[answer])
 
 
+writeToScreenState :: StateT String IO ()
+writeToScreenState = do
+        state <- get
+        lift $ putStrLn state    

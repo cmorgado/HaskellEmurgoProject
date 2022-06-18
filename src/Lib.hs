@@ -1,3 +1,4 @@
+{-# LANGUAGE BlockArguments #-}
 module Lib (runMain) where
 import QuizTypes
 import QuizState
@@ -22,18 +23,17 @@ loopAnswers :: [Answer] -> Int -> IO Int
 loopAnswers [] i = do
     promptAnswerNumber "Choose the correct:" i
 loopAnswers (x:xs) i = do
-    putStrLn("   " ++ show (i + 1) ++ ") " ++answerAnswer x)
+    h0 ("   " ++ show (i + 1) ++ ") " ++answerAnswer x)
     loopAnswers xs (i + 1)
 
 
 loopQuestions :: [Question] -> [Question] -> [Int] -> Int ->  IO ()
 loopQuestions [] qs a i = do
-    putStrLn "------------------------------------------------------------------"
+    h0 "------------------------------------------------------------------"
     let answerValue =  (100.0::Double) / fromIntegral (length qs )
     calculateResult qs a 0 answerValue 0
-    putStrLn "------------------------------------------------------------------"
-
-
+    h0 "------------------------------------------------------------------"
+    showUserAnsweredQuestion qs a 0
 loopQuestions (x:xs) qs a idx = do
     h1 (show (idx + 1) ++ ") " ++questionQuestion x)
     responseFromUser <- loopAnswers (questionAnswers x) 0
@@ -66,5 +66,32 @@ loopQuestionsResult as idx =  do
     answerCorrect (as !! idx)
 
 
+
+
+showUserAnsweredQuestion :: [Question] -> [Int] -> Int ->  IO()
+showUserAnsweredQuestion [] [] i = do
+    h1 "------------------------------------------------------------"
+    return()
+showUserAnsweredQuestion (x:xs) (y:ys) i = do
+    h1 (show (i + 1) ++ ") " ++questionQuestion x)
+    showUserAnsweredQuestionAnswersAndResult (questionAnswers x) y 0
+    showUserAnsweredQuestion xs ys (i+1)
+
+
+showUserAnsweredQuestionAnswersAndResult :: [Answer] -> Int -> Int -> IO()
+showUserAnsweredQuestionAnswersAndResult [] i idx = do
+    h1 "------------------------------------------------------------"
+    return()
+showUserAnsweredQuestionAnswersAndResult (x:xs) i idx = do
+    if answerCorrect x
+        then do
+            h2Correct ("   " ++ show (idx + 1) ++ ") " ++answerAnswer x)
+    else do
+        if idx+1 == i then do
+            h2Error ("   " ++ show (idx + 1) ++ ") " ++answerAnswer x)
+        else do
+            h0 ("   " ++ show (idx + 1) ++ ") " ++answerAnswer x)
+
+    showUserAnsweredQuestionAnswersAndResult xs i (idx+1)
 
 

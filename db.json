@@ -5,11 +5,11 @@
         "response":0,
         "answers":[
             {
-                "correct":false,
+                "correct":true,
                 "answer": "Integer"
             },
             {
-                "correct":true,
+                "correct":false,
                 "answer": "Int"
             }
             ,
@@ -72,5 +72,54 @@
             }
         ]
     }
+    ,
+    {
+        "question" :"The compiler for Haskell is?",
+        "response":0,
+        "answers":[
+            {
+                "correct":false,
+                "answer": "HSi"
+            },
+            {
+                "correct":false,
+                "answer": "DXCi"
+            },
+             {
+                "correct":true,
+                "answer": "GHCi"
+            }
+            ,
+             {
+                "correct":false,
+                "answer": "HASC"
+            }
+        ]
+    }
+    ,
+    {
+        "question" :"What is the 'not equal to' operator in Haskell?",
+        "response":0,
+        "answers":[
+            {
+                "correct":true,
+                "answer": "!="
+            },
+            {
+                "correct":false,
+                "answer": "<>"
+            },
+             {
+                "correct":false,
+                "answer": "|="
+            }
+            ,
+             {
+                "correct":false,
+                "answer": "/="
+            }
+        ]
+    }
+
 ]
 }
